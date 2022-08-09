@@ -1,9 +1,11 @@
 <script>
 /* global mapboxgl */
+import Darkmode from "darkmode-js";
 
 export default {
   mounted: function () {
     this.mapFun();
+    this.darkmode;
   },
   methods: {
     mapFun: function () {
@@ -25,6 +27,9 @@ export default {
       // Create a default Marker and add it to the map.
       const marker1 = new mapboxgl.Marker().setLngLat([-84.3924, 33.7626]).setPopup(popup).addTo(map);
       console.log(marker1);
+    },
+    darkmode: function () {
+      new Darkmode().showWidget();
     },
   },
 };
